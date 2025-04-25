@@ -30,25 +30,25 @@ def squeeze_excite_block(input, ratio=16):
     return x
 
 #code from https://github.com/imkhan2/se-resnet/blob/master/se_resnet.py
-def se_block(block_input, num_filters, ratio=8):                             # Squeeze and excitation block
+# def se_block(block_input, num_filters, ratio=8):                             # Squeeze and excitation block
 
-	'''
-		Args:
-			block_input: input tensor to the squeeze and excitation block
-			num_filters: no. of filters/channels in block_input
-			ratio: a hyperparameter that denotes the ratio by which no. of channels will be reduced
+# 	'''
+# 		Args:
+# 			block_input: input tensor to the squeeze and excitation block
+# 			num_filters: no. of filters/channels in block_input
+# 			ratio: a hyperparameter that denotes the ratio by which no. of channels will be reduced
 			
-		Returns:
-			scale: scaled tensor after getting multiplied by new channel weights
-	'''
+# 		Returns:
+# 			scale: scaled tensor after getting multiplied by new channel weights
+# 	'''
 
-	pool1 = GlobalAveragePooling2D()(block_input)
-	flat = Reshape((1, 1, num_filters))(pool1)
-	dense1 = Dense(num_filters//ratio, activation='relu')(flat)
-	dense2 = Dense(num_filters, activation='sigmoid')(dense1)
-	scale = multiply([block_input, dense2])
+# 	pool1 = GlobalAveragePooling2D()(block_input)
+# 	flat = Reshape((1, 1, num_filters))(pool1)
+# 	dense1 = Dense(num_filters//ratio, activation='relu')(flat)
+# 	dense2 = Dense(num_filters, activation='sigmoid')(dense1)
+# 	scale = multiply([block_input, dense2])
 	
-	return scale
+# 	return scale
 
 
 import numpy as np
@@ -275,9 +275,8 @@ def create_pairs(x, digit_indices):
 
 
 # path to dataset
-# data_path = '/content/drive/MyDrive/ImageEnhancementBasedTracker/IEM/test/sample'
-data_path = '/content/drive/MyDrive/Water-Net_Code/testing_code_by_Branimir_Ambrekovic/sample'
-#train_folder = os.path.join(data_path,'fish_image')
+data_path = '/content/drive/MyDrive/BTPData_new/fish_image'
+
 
 X,y = loadimgs(data_path)
 # print(y.shape)
@@ -321,7 +320,6 @@ def visualize(pairs, labels, to_show=6, num_col=3, predictions=None, test=False)
 # visualize(tr_pairs[:-1], tr_y[:-1], to_show=4, num_col=4)
 input_shape = (53,121,3)
 model = SiameseNetwork(input_shape)
-# filepath = "/content/drive/MyDrive/ImageEnhancementBasedTracker/ImEnS/train/models/temp.h5"
 # checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
 rms = RMSprop()
 # print(model.summary())
@@ -344,9 +342,8 @@ history = model.fit([tr_pairs[:, 0], tr_pairs[:, 1]], tr_y.astype('float32'),
           callbacks = keras_callbacks
           )
 
-
-model.save("/content/drive/MyDrive/ImageEnhancementBasedTracker/ImEnS/train/models/temp.h5")
-
+save_path = "/content/drive/MyDrive/Multi-Fish-Tracking-with-Underwater-Image-Enhancement/models/model30_f4k_ft.h5"
+model.save(save_path)
 
 figure, axis = plt.subplots(1, 2)
 # Plot training & validation accuracy values

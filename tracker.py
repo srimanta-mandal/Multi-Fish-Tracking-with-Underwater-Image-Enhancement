@@ -113,7 +113,7 @@ def adjust_gamma(image, gamma=1.0):
 f= open('Appearance_Siam_uwcnn_senet.txt','w+')
 f.close()
 print('Loading LSTM Model.......')
-Attentionmodel = load_model('/content/drive/MyDrive/BTPK/Deep-Fish-Tracker-Network/AttentionLSTM.h5',custom_objects= {'AttentionWithContext':AttentionWithContext})
+Attentionmodel = load_model('/content/drive/MyDrive/Multi-Fish-Tracking-with-Underwater-Image-Enhancement/models/AttentionLSTM.h5',custom_objects= {'AttentionWithContext':AttentionWithContext})
 print('LSTM Model Loaded')
 def b_init(shape,dtype=None):
     """Initialize bias as in paper"""
@@ -133,7 +133,7 @@ get_custom_objects().update({'b_init': CustomInitializer})
 
 print('Loading Siamese Model.......')
 
-Siamesemodel = tf.keras.models.load_model('/content/drive/MyDrive/BTPK/model30_f4k_ft.h5',compile=False) 
+Siamesemodel = tf.keras.models.load_model('/content/drive/MyDrive/Multi-Fish-Tracking-with-Underwater-Image-Enhancement/models/model30_f4k_ft.h5',compile=False) 
 
 #Siamesemodel = tensorflow.keras.models.load_model('/content/drive/MyDrive/BTPData_new/temp_models/model_1.h5', compile=False) 
 # Siamesemodel = load_model('/content/drive/MyDrive/BTPK/Deep-Fish-Tracker-Network/Siamese.h5', compile=False) 
