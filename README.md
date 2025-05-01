@@ -10,8 +10,18 @@ This repository is an implementation of the paper titled "Multi-fish tracking wi
 Prerana Mukherjee, Srimanta Mandal, Koteswar Rao Jerripothula, Vrishabhdhwaj Maharshi, Kashish Katara, “Multi-Fish Tracking with Underwater Image Enhancement by Deep Network in Marine Ecosystems,” in Signal Processing: Image Communication, Vol.138, pp.117321, 2025.
 
 ```
-function test() {
-  console.log("This code will have a copy button to the right of it");
+@article{MUKHERJEE2025117321,
+title = {Multi-fish tracking with underwater image enhancement by deep network in marine ecosystems},
+journal = {Signal Processing: Image Communication},
+volume = {138},
+pages = {117321},
+year = {2025},
+issn = {0923-5965},
+doi = {https://doi.org/10.1016/j.image.2025.117321},
+url = {https://www.sciencedirect.com/science/article/pii/S0923596525000682},
+author = {Prerana Mukherjee and Srimanta Mandal and Koteswar Rao Jerripothula and Vrishabhdhwaj Maharshi and Kashish Katara},
+keywords = {Underwater enhancement, Multi-object tracking, Siamese network, Similarity},
+abstract = {Tracking marine life plays a crucial role in understanding migration patterns, movements, and population growth of underwater species. Deep learning-based fish-tracking networks have been actively researched and developed, yielding promising results. In this work, we propose an end-to-end deep learning framework for tracking fish in unconstrained marine environments. The core innovation of our approach is a Siamese-based architecture integrated with an image enhancement module, designed to measure appearance similarity effectively. The enhancement module consists of convolutional layers and a squeeze-and-excitation block, pre-trained on degraded and clean image pairs to address underwater distortions. This enhanced feature representation is leveraged within the Siamese framework to compute an appearance similarity score, which is further refined using prediction scores based on fish movement patterns. To ensure robust tracking, we combine the appearance similarity score, prediction score, and IoU-based similarity score to generate fish trajectories using the Hungarian algorithm. Our framework significantly reduces ID switches by 35.6% on the Fish4Knowledge dataset and 3.8% on the GMOT-40 fish category, all while maintaining high tracking accuracy. The source code of this work is available here: https://github.com/srimanta-mandal/Multi-Fish-Tracking-with-Underwater-Image-Enhancement.}
 }
 ```
 
