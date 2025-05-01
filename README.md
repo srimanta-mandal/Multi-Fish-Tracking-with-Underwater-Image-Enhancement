@@ -9,18 +9,12 @@ Tracking of marine life is an important part of the study and analysis of migrat
 This repository is an implementation of the paper titled "Multi-fish tracking with underwater image enhancement by deep network in marine ecosystems" from Signal Processing: Image Communication journal. If you find our work useful in your work, please cite our work:
 Prerana Mukherjee, Srimanta Mandal, Koteswar Rao Jerripothula, Vrishabhdhwaj Maharshi, Kashish Katara, “Multi-Fish Tracking with Underwater Image Enhancement by Deep Network in Marine Ecosystems,” in Signal Processing: Image Communication, Vol.138, pp.117321, 2025.
 
-@article{MUKHERJEE2025117321,
-title = {Multi-fish tracking with underwater image enhancement by deep network in marine ecosystems},
-journal = {Signal Processing: Image Communication},
-volume = {138},
-pages = {117321},
-year = {2025},
-issn = {0923-5965},
-doi = {https://doi.org/10.1016/j.image.2025.117321},
-url = {https://www.sciencedirect.com/science/article/pii/S0923596525000682},
-author = {Prerana Mukherjee and Srimanta Mandal and Koteswar Rao Jerripothula and Vrishabhdhwaj Maharshi and Kashish Katara},
-keywords = {Underwater enhancement, Multi-object tracking, Siamese network, Similarity},
+```
+function test() {
+  console.log("This code will have a copy button to the right of it");
 }
+```
+
 
 
 ## 📁 Dataset Preparation
